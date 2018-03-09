@@ -1,0 +1,119 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <title>Pivot Table Selector</title>
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script src="http://code.highcharts.com/highcharts.js"></script>
+    </head>
+    
+    <body>
+        <!-- Page Wrapper -->
+        <div id="page-wrapper">
+
+            <!-- Header -->
+            <header id="header">
+                <h1><a href="index.html">Personalities</a></h1>
+                <nav id="nav">
+                    <ul>
+                        <li class="special">
+                            <a href="#menu" class="menuToggle"><span>Menu</span></a>
+                            <div id="menu">
+                                <ul>
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="generic.html">Insights</a></li>
+                                    <li><a href="pivottable.html">Pivot Tables</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+            
+            <!-- ############## FORM ################# -->
+            <section id="one" class="wrapper alt style5">
+            <!-- here's help http://www.tutorialspoint.com/python/python_cgi_programming.htm -->
+            <form action="pivottable.py" method="post" target="_blank">
+                <label for="row">Row Label</label>
+                <select name="row-label" style="width:500px">
+                    <option value="race">Race</option>
+                    <option value="age">Age</option>
+                    <option value="engnat">Is English your native language?</option>
+                    <option value="gender" selected>Gender</option>
+                    <option value="hand">What hand do you use to write with?</option>
+                    <option value="participant_source">How the participant came to the test</option>
+                    <option value="location">Participant's technical location - ISO country code</option>
+                    <option value="extravert">Individual Extraversion Score</option>
+                    <option value="neurotic">Individual Neuroticism Score</option>
+                    <option value="agreeable">Individual Agreeableness Score</option>
+                    <option value="conscientious">Individual Conscientiousness Score</option>
+                    <option value="openness">Individual Openness Score</option>
+                </select>
+                        
+                <label for="column">Column Label</label>
+                <select name="column-label" style="width:500px">
+                    <option value="race">Race</option>
+                    <option value="age" selected>Age</option>
+                    <option value="engnat">Is English your native language?</option>
+                    <option value="gender">Gender</option>
+                    <option value="hand">What hand do you use to write with?</option>
+                    <option value="participant_source">How the participant came to the test</option>
+                    <!-- location label is not available as it has 156 unique categories
+                    and would be better formatted as a row label -->
+                    <option value="extravert">Individual Extraversion Score</option>
+                    <option value="neurotic">Individual Neuroticism Score</option>
+                    <option value="agreeable">Individual Agreeableness Score</option>
+                    <option value="conscientious">Individual Conscientiousness Score</option>
+                    <option value="openness">Individual Openness Score</option>
+                </select>
+                
+                <label for="aggregation">Aggregation (mean)</label>
+                <select name="aggregation" style="width:500px">
+                    <!--<option value="race">Race</option>
+                    <option value="age">Age</option>
+                    <option value="engnat">Is English your native language?</option>
+                    <option value="gender" selected>Gender</option>
+                    <option value="hand">What hand do you use to write with?</option>
+                    <option value="participant_source">How the participant came to the test</option>
+                    <option value="location">Participant's technical location - ISO country code</option>-->
+                    <option value="extravert" selected>Individual Extraversion Score</option>
+                    <option value="neurotic">Individual Neuroticism Score</option>
+                    <option value="agreeable">Individual Agreeableness Score</option>
+                    <option value="conscientious">Individual Conscientiousness Score</option>
+                    <option value="openness">Individual Openness Score</option>
+                </select>
+                
+                <label for="filter-parent">Filter</label>
+                <select name="filter-parent" id="filter-parent" style="width:500px">
+                    <option value="" selected>None</option>
+                    <option value="race">Race</option>
+                    <option value="age">Age</option>
+                    <option value="engnat">Is English your native language?</option>
+                    <option value="gender">Gender</option>
+                    <option value="hand">What hand do you use to write with?</option>
+                    <option value="participant_source">How the participant came to the test</option>
+                    <option value="location">Participant's technical location - ISO country code</option>
+                    <option value="extravert">Individual Extraversion Score</option>
+                    <option value="neurotic">Individual Neuroticism Score</option>
+                    <option value="agreeable">Individual Agreeableness Score</option>
+                    <option value="conscientious">Individual Conscientiousness Score</option>
+                    <option value="openness">Individual Openness Score</option>
+                </select>
+                <select name="filter-child" id="filter-child" style="width:500px"></select>
+            
+                <input type="submit" value="Generate Pivot Table"/>
+            </form>
+            </section>
+        </div>
+        <!-- Scripts -->
+            <script src="assets/js/jquery.min.js"></script>
+            <script src="assets/js/jquery.scrollex.min.js"></script>
+            <script src="assets/js/jquery.scrolly.min.js"></script>
+            <script src="assets/js/skel.min.js"></script>
+            <script src="assets/js/util.js"></script>
+            <script src="assets/js/main.js"></script>
+        
+            <script src="assets/js/update_filter.js"></script>
+    </body>
+</html>
